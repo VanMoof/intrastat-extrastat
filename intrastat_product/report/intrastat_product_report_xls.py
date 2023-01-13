@@ -53,7 +53,7 @@ class IntrastatProductDeclarationXlsx(models.AbstractModel):
                 'line': {
                     'type': 'string',
                     'value': self._render(
-                        "line.hs_code_id.local_code or ''"),
+                        "line.hs_code_id.global_code or ''"),
                 },
                 'width': 14,
             },
