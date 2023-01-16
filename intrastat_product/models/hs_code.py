@@ -13,6 +13,12 @@ class HSCode(models.Model):
     intrastat_unit_id = fields.Many2one(
         comodel_name='intrastat.unit',
         string='Intrastat Supplementary Unit')
+    
+    global_code = fields.Char(
+        required=True,
+        help="Code used for the national Import/Export declaration. "
+        "The global code consists in the first 6 digits of the H.S. local code",
+    )
 
     @api.constrains('local_code')
     def _hs_code(self):
